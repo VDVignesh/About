@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Hi all i'am Vignesh and this is personal website">
     <meta name="author" content="VDVignesh">
-    <title>Meet VDVignesh</title>
-    <link rel="icons" href="IMG-20210326-WA0003.png" alt="photo">
+    <meta name="keywords" content="VDVignesh,mgmrp school,web os,web os Download">
+    <title>Meet VDVignesh</title> 
+    <link rel="icons" href="IMG-20210326-WA0003.png">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -62,15 +63,15 @@
               </nav>
          </div>
      </div>
-     <div class="col-md-6">
-      <img src="IMG-20210326-WA0003.png" class="rounded-circle" style="width: 300px; height: 300px;">
+     <div class="col-md-6 text-sm-left">
+      <img src="IMG-20210326-WA0003.png" class="rounded-circle" style="width: 300px; height: 300px;" alt="my_photo" title="my photo">
+    </div>
+    <div class="container">
+      <p> <span class="typed-text " style="font-family: 'Reenie Beanie', cursive; font-size: 50px; position: relative; left: 20%;" title="loading"></span></span><span class="cursor">&nbsp;</span></p>
     </div>
     <div>
-      <label class="col-md-6" style="font-family: 'Reenie Beanie', cursive; font-size: 50px; position: relative; left: 20%;">motto:First solve the problem then write the code</label>
-    </div>
-    <div>
-      <h1 class="col-md-6 text-lg-center" style="font-family: 'Open Sans', sans-serif; text-decoration: underline;">Somthing about me</h1><br>
-      <div class="col-md-6 text-lg-center" style="font-family: 'Open Sans', sans-serif; text-transform: uppercase; font-size: 30px;">
+      <h1 class="col-md-6 text-lg-center" style="font-family: 'Pushster', cursive; text-decoration: underline; font-size: 50px;">Somthing about me</h1><br>
+      <div class="col-md-6 text-lg-center" style="font-family: 'Pushster', cursive; text-transform: uppercase; font-size: 30px;">
         <label>name: VDVignesh</label><br>
         <label>nationality : indian</label><br>
         <label>state : kerala</label><br>
@@ -80,18 +81,61 @@
         <label>hobbies : love to make programs form python and useful website form html css and little bit js</label><br>
       </div>
     </div>
-    <footer class="bg-info">
+    <footer class="bg-dark">
       <div class="container">
           <div class="row">
-             <div class="col-md-6 text-center text-white p-4"style="font-size: 30px;">
+             <div class="col-md-12 text-center text-drak p-4"style="font-size: 30px; @import url('https://fonts.googleapis.com/css2?family=Pushster&display=swap'); font-family: 'Pushster', cursive;">
              <a href="https://www.youtube.com/channel/UCXUeXBZi53jyQldS36tKAyg" target="blank" style="color: black;"><i class="fab fa-youtube"></i></a>
              <a href="mailto:vdileepvignesh@gmail.com" target="blank"><i class="fas fa-envelope-square"style="color: black;"></i></i></a>
              <a href="https://www.github.com/VDVignesh" target="blank"><i class="fab fa-github"style="color: black;"></i></a>
-              <p style="color: white; text-decoration: underline;">Copyright@2021</p>
+            <p style="color:white;"><i class="fas fa-copyright"></i> VDVignesh - All rights reserved</p>
              </div>
           </div>
       </div>
   </footer> 
+   <script>
+     const typedTextSpan = document.querySelector(".typed-text");
+const cursorSpan = document.querySelector(".cursor");
+
+const textArray = ["Motto:First solve the problem then Write the code", "My name is Vignesh", "I like to code", "I also make youtube videos please subscribe"];
+const typingDelay = 200;
+const erasingDelay = 100;
+const newTextDelay = 2000; // Delay between current and next text
+let textArrayIndex = 0;
+let charIndex = 0;
+
+function type() {
+  if (charIndex < textArray[textArrayIndex].length) {
+    if(!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
+    typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
+    charIndex++;
+    setTimeout(type, typingDelay);
+  } 
+  else {
+    cursorSpan.classList.remove("typing");
+  	setTimeout(erase, newTextDelay);
+  }
+}
+
+function erase() {
+	if (charIndex > 0) {
+    if(!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
+    typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex-1);
+    charIndex--;
+    setTimeout(erase, erasingDelay);
+  } 
+  else {
+    cursorSpan.classList.remove("typing");
+    textArrayIndex++;
+    if(textArrayIndex>=textArray.length) textArrayIndex=0;
+    setTimeout(type, typingDelay + 1100);
+  }
+}
+
+document.addEventListener("DOMContentLoaded", function() { // On DOM Load initiate the effect
+  if(textArray.length) setTimeout(type, newTextDelay + 250);
+});
+   </script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
     crossorigin="anonymous"></script>
