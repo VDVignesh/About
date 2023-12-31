@@ -12,12 +12,274 @@
 <meta name="keywords" content="VDVignesh,mgmrp school,web os,web os Download,Lakeford school, kollam, kavanad">
 <link rel="icons" href="IMG-20210326-WA0003.png">
 <meta name="author" content="VDVignesh">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+<style>
+  *,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font: normal 16px/1.5 "Helvetica Neue", sans-serif;
+  color: #fff;
+  overflow-x: hidden;
+  padding-bottom: 50px;
+}
+
+
+/* INTRO SECTION
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.intro {
+  background: #000000;
+  padding: 100px 0;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+
+/* TIMELINE
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.timeline ul {
+  background: #000000;
+  padding: 50px 0;
+}
+
+.timeline ul li {
+  list-style-type: none;
+  position: relative;
+  width: 6px;
+  margin: 0 auto;
+  padding-top: 50px;
+  background: #ad7878;
+}
+
+.timeline ul li::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: inherit;
+  z-index: 1;
+}
+
+.timeline ul li div {
+  position: relative;
+  bottom: 0;
+  width: 400px;
+  padding: 15px;
+  background: #0f0f0f;
+}
+
+.timeline ul li div::before {
+  content: "";
+  position: absolute;
+  bottom: 7px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+.timeline ul li:nth-child(odd) div {
+  left: 45px;
+}
+
+.timeline ul li:nth-child(odd) div::before {
+  left: -15px;
+  border-width: 8px 16px 8px 0;
+  border-color: transparent #dd0012 transparent transparent;
+}
+
+.timeline ul li:nth-child(even) div {
+  left: -439px;
+}
+
+.timeline ul li:nth-child(even) div::before {
+  right: -15px;
+  border-width: 8px 0 8px 16px;
+  border-color: transparent transparent transparent #ff0116;
+}
+
+time {
+  display: block;
+  color: red;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+  font-family: 'Permanent Marker';
+  
+}
+
+
+/* EFFECTS
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.timeline ul li::after {
+  transition: background 0.5s ease-in-out;
+}
+
+.timeline ul li.in-view::after {
+  background: #ff071c;
+}
+
+.timeline ul li div {
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+.timeline ul li:nth-child(odd) div {
+  transform: translate3d(200px, 0, 0);
+}
+
+.timeline ul li:nth-child(even) div {
+  transform: translate3d(-200px, 0, 0);
+}
+
+.timeline ul li.in-view div {
+  transform: none;
+  visibility: visible;
+  opacity: 1;
+}
+
+
+/* GENERAL MEDIA QUERIES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+@media screen and (max-width: 900px) {
+  .timeline ul li div {
+    width: 250px;
+  }
+  .timeline ul li:nth-child(even) div {
+    left: -289px;
+    /*250+45-6*/
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .timeline ul li {
+    margin-left: 20px;
+  }
+  .timeline ul li div {
+    width: calc(100vw - 91px);
+  }
+  .timeline ul li:nth-child(even) div {
+    left: 45px;
+  }
+  .timeline ul li:nth-child(even) div::before {
+    left: -15px;
+    border-width: 8px 16px 8px 0;
+    border-color: transparent #f45b69 transparent transparent;
+  }
+}
+
+
+/* EXTRA/CLIP PATH STYLES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.timeline-clippy ul li::after {
+  width: 40px;
+  height: 40px;
+  border-radius: 0;
+}
+
+.timeline-rhombus ul li::after {
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+.timeline-rhombus ul li div::before {
+  bottom: 12px;
+}
+
+.timeline-star ul li::after {
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
+}
+
+.timeline-heptagon ul li::after {
+  clip-path: polygon(
+    50% 0%,
+    90% 20%,
+    100% 60%,
+    75% 100%,
+    25% 100%,
+    0% 60%,
+    10% 20%
+  );
+}
+
+.timeline-infinite ul li::after {
+  animation: scaleAnimation 2s infinite;
+}
+
+@keyframes scaleAnimation {
+  0% {
+    transform: translateX(-50%) scale(1);
+  }
+  50% {
+    transform: translateX(-50%) scale(1.25);
+  }
+  100% {
+    transform: translateX(-50%) scale(1);
+  }
+}
+
+
+/* FOOTER STYLES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.page-footer {
+  position: fixed;
+  right: 0;
+  bottom: 20px;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  color: black;
+  background: rgba(255, 255, 255, 0.65);
+}
+
+.page-footer a {
+  display: flex;
+  margin-left: 4px;
+}
+</style>
 </head>
 <body>
-<div class="MainDiv" style="font-family: 'IBM Plex Mono', monospace;">
+<div class="MainDiv" id="NavBar" style="font-family: 'IBM Plex Mono', monospace;">
     <div class="NavBar_Container"><nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#" style="font-size: 40px;">VDVignesh</a>
+          <a class="navbar-brand" href="#" style="font-size: 40px;">Happy New Year Welcome to 2024</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -33,16 +295,16 @@
                 <a class="nav-link" href="#Projects">Projects</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#Friends">Personal Interests</a>
+                <a class="nav-link" href="#Friends">Updates</a>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Some More stuff
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="https://vdvignesh.github.io/Web_os_online/">WebOS</a></li>
-                  <li><a class="dropdown-item" href="https://vdvignesh.github.io/Web-OS-Tripuna">WebOS-Tripura</a></li>
-                  <li><a class="dropdown-item" href="https://youtube.com/@VigneshLostInGames?si=a9n2eYGoNxuC4owJ">YT Channel</a></li>
+                  <li><a class="dropdown-item" href="#">WebOS</a></li>
+                  <li><a class="dropdown-item" href="#">WebOS-Tripura</a></li>
+                  <li><a class="dropdown-item" href="#">YT Channel</a></li>
                 </ul>
               </li>
             </ul>
@@ -51,35 +313,97 @@
       </nav></div>
 <section class="bg-black" id="home">
 <div
-  class="bg-image" style="background-image: url('https://img.freepik.com/free-vector/nature-scene-with-river-hills-forest-mountain-landscape-flat-cartoon-style-illustration_1150-37326.jpg?w=740&t=st=1692711112~exp=1692711712~hmac=8756f1045f4e3d3562290cb3e4f313fb5415d98851dc2adafa6dfe89ca05b90a'); background-repeat: no-repeat; background-size: cover; height: 125vh;">
+  class="bg-image" style=" background-color: black; height: 125vh;">
 
-  <img src="IMG-20210326-WA0003.png" class="rounded-circle" height="350vh" style="align-items: center;" alt="ME" title="that's me the legend">
-  <p> <span class="typed-text " style="font-size: 50px; position: relative; left: 0%; color: black;" title="loading"></span><span class="cursor typing">&nbsp;</span></p>
+  <img src="IMG-20210326-WA0003.png" class="rounded-circle mx-auto d-block" height="300vh " style="align-items: center;" alt="ME" title="that's me the legend">
+  <p class="col-md-12 text-center" style="font-size: 30px; font-family: 'Rubik Glitch';">VDVignesh</p>
+  <p class="col-md-12 text-center" style="font-size: 30px; font-family: 'Rubik Glitch';">Student of Lakeford School Kollam</p>
+  <p> <span class="typed-text " style="font-family: 'Rubik Glitch';font-size: 55px; position: relative; left: 0%; color: rgb(210, 14, 14);" title="loading"></span><span class="cursor typing">&nbsp;</span></p>
 </div>
 </section>
 </div>
 <section class="bg-black" id="About">
   <div>
-    <div class="col-md-6 text-lg-center" style=" color:wheat;font-family: 'IBM Plex Mono', monospace; text-transform: uppercase; font-size: 45px;">
-      <label style="text-decoration: underline;">SomeThing about Me</label>
-      <label>name: VD Vignesh</label><br>
-      <label>nationality : Indian</label><br>
-      <label>state : Kerala</label><br>
-      <label title="Sent me gifts">Birthday : 14 October every year since 2009</label><br>
-      <label>school : Lakeford School Kollam</label><br>
-      <label>grade : 8th class</label><br>
-      <label>age : 14</label><br>
-      <label title="just call it football or else face that's waiting for you">Favorite Sport : Football/Soccer</label><br>
-      <label title="My hobby is my hobby none of your hobbies">hobbies : love to make programs from python and useful website form html css and little bit js</label><br>
-      <label></label>
+    <div class="col-12 text-center" style=" color:wheat;font-family: 'IBM Plex Mono', monospace; text-transform: uppercase; font-size: 45px;">
+       <h1 style="text-decoration: underline;">About me</h1> <br>
+
+       <p style="font-size: 30px; font-family: 'Rubik Glitch';">"Greetings! I'm VD Vignesh, a 14-year-old from Kerala, India. Currently navigating the 8th grade at Lakeford School in Kollam, my journey began on the 14th of October in 2009. While school keeps me engaged, my true passion lies in football, a sport that not only fuels my competitive spirit but also keeps me agile. Beyond the soccer field, I delve into the digital realm, finding joy in crafting Python programs and sculpting interactive websites with HTML, CSS, and a dash of JavaScript magic. In essence, I'm a young explorer, passionate about both the physical and virtual worlds, always eager to conquer new horizons."</p>
+       <p style="font-size: 30px; font-family: 'Rubik Glitch'  ;">"Our Greatest weakness lies in giving up.The most certain way to suceed is always to try just one more time" </p>
+       <p style="font-size: 30px; font-family: 'Rubik Glitch'; text-transform: none;"> --Thomas Edison </p>
     </div>
+
+    <section class="intro">
+      <div class="container">
+        <h1 style="font-size: 45px; font-family: 'Rubik Glitch';">My Journey Throught coding &darr;</h1>
+      </div>
+    </section>
+    
+    <section class="timeline">
+      <ul>
+        <li>
+          <div>
+            <time>March 2020 - The Beginning</time> In my final exams, something surprising happened. I forgot my pencil, borrowed one, and noticed a classmate making mistakes. After the exams, there was chaos and rumors about extra holidays. But then, we found out about COVID-19. School closed, exams got canceled, and everyone moved to the next grade. At first, I was happy for the break, but watching the news made me realize it was a big deal. Things were about to change because of COVID-19.
+          </div>
+        </li>
+        <li>
+          <div>
+            <time>April 2020 - August 2020 - Covid Becomes Powerfull</time> When COVID-19 chaos hit, and a 21-day curfew was announced, things got really confusing. Stuck at home, I decided to make good use of the time. Inspired by my mom's Ph.D. work, I started learning to code using White Hat Junior. Later, I found out it was considered a scam, but back then, it cost a hefty 8000 rupees or about 100 US dollars for just eight classes or a week. during this entire time Covid-19 was booming in many countries
+          </div>
+        </li>
+        <li>
+          <div>
+            <time>October 2020 - January 2021 - YouTube Comes for competetion</time> In October, my focus was on White Hat Junior classes, realizing later that the expense was due to personalized 1-to-1 sessions. I discovered they used code.org for block-based coding and Firebase for script-based coding, a reward for attending over 100 classes. There was controversy, particularly a 12-year-old landing a Google job with a whopping ₹12,00,00,000 package after learning from them. Their ads, featuring Bollywood celebrities, aimed at selling courses to kids. I shifted to online tutorials, particularly Code with Harry, for HTML coding. Code.org offered an HTML-based website maker with free domains and CSS but no JavaScript support. I integrated lessons from Code with Harry into my previous projects. Then comings new year Covid gets another boom but scientist decide to make a vaccine and Youtube was also completing with Covid since it was Booming so fast 1 Billion hours worth of content where being watched
+          </div>
+        </li>
+        <li>
+          <div>
+            <time>February 2021 - June 2021 - CodeItInYourWay Comes to Help</time> During that time, online classes became important around June 20, 2020. Many students, including me, faced challenges like poor internet, but I was lucky to have broadband for the first six months. After that, we got our own internet plans. Despite challenges, I kept learning online, and my coding skills grew. A significant moment was joining an Amfoss workshop by Amrita University, where I learned basics and IoT. It was a great decision that broadened my coding skills and opened new horizons in technology.While for me everything is going good but not for other since in india due to Covid's new varient people where dying quickly are Strict Retrictions where imposed
+          </div>
+        </li>
+        <li>
+          <div>
+            <time>June 2021 - December 2021 - CodeItInYourWay The better White Hat Jr? and WebOs:Hello is born</time> The Amrita University workshop, lasting just five weeks, provided more tech insights than my five-month experience with Whitehat Junior. It sparked a realization: Bootstrap, a website framework introduced in the workshop, surpassed platforms like ProFreehost or Wix, which require payment. GitHub, a coding repository, became my go-to for industry professional-posted codes. In this competitive world, I envisioned creating something revolutionary – Web OS Hello, an operating system for the web. People in the workshop loved the idea, and it aligned with Microsoft's later launch of Windows 365 online. However, my project faced challenges, with limited awareness and visits, possibly due to my young age at the time, around 11 or 12 years old.But it sparked a light in me of making the best possible WebOS Version to complete with the Big Bulls of the Industry
+          </div>
+        </li>
+        <li>
+          <div>
+            <time>January 2022 - April 2022 - Project "Godzilla" My biggest Failed Attempt</time> After the Amrita University workshop, I had lifetime support, promising endless help. However, I didn't utilize it much, still following Code with Harry. I expanded my knowledge to Tailwind CSS, Vue.js, and Node.js. Then, I worked on Godzilla, aiming for the ultimate Web OS. This led to Project Jarvis, envisioning a unique design structure. A prototype on code.org impressed a friend, prompting an attempt at an app using Thunkable. Despite JavaScript knowledge, attempt 1 failed. Attempt 2 faced delays due to school and the pandemic. Modifying the failed design brought challenges, with GitHub Pages setup issues. The learning journey had its bumps, but the drive to create something exceptional persisted.Then i was soon Going to make Greatest WebOs which i ever made 
+          </div>
+        </li>
+        <li>
+          <div>
+            <time>April 2022 - June 2023 - Godzilla Become true</time> So, what happened to Godzilla? Is it over? Well, not exactly. At one point, I considered leaving it behind to focus on studies. However, during the Christmas vacation, with time on my hands, I revived Godzilla, now known as Web OS Tripura. Why Tripura? It's a random name generated from all states and capitals, a cool coincidence. Development began, fueled by AI suggestions for the greatest website invention – a multi-tool site. Code with Harry tutorials helped bring Web OS Tripura to life, but it wasn't complete. The project stretched through January to March, and then a golden opportunity arose in April with a school workshop titled "How and Why?" Despite the workshop focusing on Wix, I wanted more. In just three weeks, I pulled off Web OS Tripura, showcasing what I'd learned.
+          </div>
+        </li>
+        <li>
+          <div>
+            <time>May 2022 - Beginning of the New AI</time> Web OS Tripura, or let's stick with Godzilla, was ready for action. However, Godzilla lacked many features compared to modern operating systems. My mentor suggested adding AI, and while the idea was enticing, creating a sophisticated chatbot like ChatGPT seemed impossible for a child. Instead, I opted for a brilliant solution—utilizing an old technology: the keyword system. By identifying keywords in user queries, I could craft responses. Yet, this approach had a flaw: it couldn't distinguish between similar queries. To market it effectively, I prepared a presentation script with pre-set questions. The AI wasn't super intelligent, but I cleverly incorporated a Google search bar to enhance its capabilities. People loved it, even though it couldn't compete with big players operating on a billion parameters, as I was working with less than 10. Godzilla continued, not just for AI but for the overall UI development.
+          </div>
+        </li>
+        <li>
+          <div>
+            <time>June 2023 - Godzilla Wins his battle</time> The presentation day arrived with anticipation. I had no idea about my opponents' projects, and they were equally clueless about mine—a strategic move. The competition featured various impressive projects, including games and an agriculture model using hydroponics. The judges evaluated projects, and I shared my past workshop experiences. The event concluded with our principal praising everyone's creativity. As the pandemic was ending, schools were set to reopen the following week, and I wondered if my classmates would recognize my efforts. After that week is over everything is done and the results came you won't believe it but Godzilla Actually won the 2022-23 HowNWhy workshop best Project Award but i didn't recive a award with a digital copy
+          </div>
+        </li>
+        <li>
+          <div>
+            <time>July 2022 - December 2022 - A New Vision</time> One of my biggest dreams for Web OS is to port it to mobile, creating a phone edition for public release. Unfortunately, it hasn't happened due to a lack of time and the setbacks in Godzilla's attempts. Delays, forgetfulness, and failed attempts were part of the journey. To promote myself, I decided to create this about page. While I may see myself as a brand, I remain humble. If you're curious about how I made the entire thing, you can contact me via email.   
+          </div>
+        </li>
+        <li>
+          <div>
+            <time>January 2023 - Present</time> Presently i have no other ideas for coming up with a new product but rather updating the already existing one's if there is any i will let you guys know in the Updates tab
+          </div>
+        </li>
+      </ul>
+    </section>
   </div>
   </section>
   <section id="Friends">
     <div class="col-md-16 bg-white">
-      <h1 style="font-family: 'IBM Plex Mono', monospace; color: black; text-decoration: underline; align-items: center;">Personal Interests / New Year Resolution / Yearly Projects Updates(Click on the left Side of the Slide for move to the Next Page :)</h1>
+      <h1 class="text-center  " style="font-family: 'IBM Plex Mono', monospace; color: black; text-decoration: underline; align-items: center;">Updates (Click on the Left side of your screen to move to left)</h1>
     </div>
-    <div class="col-md-16 bg-white" style="font-family: 'IBM Plex Mono', monospace;">
+    <div class="col-md-16 bg-dark" style="font-family: 'IBM Plex Mono', monospace;">
       <div id="carouselExampleIndicators" class="carousel slide">
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -88,14 +412,14 @@
         </div>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <h1 style="text-transform: uppercase;">Interests for this Year</h1>
+            <h1 style="text-transform: uppercase;">New Resolution Which i completed</h1>
             <div class="card-group">
               <div class="card">
                 <img src="https://images.unsplash.com/photo-1630343710506-89f8b9f21d31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cmVhZGluZyUyMGJvb2t8ZW58MHx8MHx8fDA%3D&w=1000&q=80" class="card-img-top" alt="Source : Unsplash">
                 <div class="card-body">
                   <h5 class="card-title">Complete a Reading a Real Book</h5>
                   <p class="card-text">Ya ya wait till you start pointing out things on me i want say that i am kind good reader for Geronimo Stilton Book Like the Kingdom of fantasy but i am lazy when it comes to reading anything other than the geronimo Stilton Books</p>
-                  <p class="card-text"><small class="text-body-secondary">Last updated 24 Aug 2023</small></p>
+                  <p class="card-text"><small class="text-body-secondary">Last updated 1 January 2024</small></p>
                 </div>
               </div>
               <div class="card">
@@ -103,7 +427,7 @@
                 <div class="card-body">
                   <h5 class="card-title">Studying Hard so that my grades continue talking</h5>
                   <p class="card-text">Bro/Sis listen yes i am agree that i am not nerd in the S.T.E.M Subjects but intelligent enough to make this website and update it yearly ya my grades are average so is it time to improve them .</p>
-                  <p class="card-text"><small class="text-body-secondary">Last updated 24 Aug 2023</small></p>
+                  <p class="card-text"><small class="text-body-secondary">Last updated 1 January 2024</small></p>
                 </div>
               </div>
               <div class="card">
@@ -111,7 +435,7 @@
                 <div class="card-body">
                   <h5 class="card-title">Become the Ultimate Tech GOD of my school</h5>
                   <p class="card-text">This looks like one of my boosting scenarios but it's not and as of now some of might be laughing like how in the world i am going to doing these things that my fellow class mates can't even imagin cuz in my class if know to Make any Technical Related thing about a game you a technology GOD</p>
-                  <p class="card-text"><small class="text-body-secondary">Last updated 24 Aug 2023</small></p>
+                  <p class="card-text"><small class="text-body-secondary">Last updated 1 January 2024</small></p>
                 </div>
               </div>
             </div>
@@ -123,8 +447,8 @@
                 <img src="https://images.pexels.com/photos/614117/pexels-photo-614117.jpeg?auto=compress&cs=tinysrgb&w=600" class="card-img-top" alt="Source : Pexels">
                 <div class="card-body">
                   <h5 class="card-title">Complete The New Web-Os</h5>
-                  <p class="card-text">Yes Guys Web-Os is now getting regular updates as of May 2024 and in 2023 there will be no major update by the no update till now as of 24/8/2023</p>
-                  <p class="card-text"><small class="text-body-secondary">Last updated 24 Aug 2023</small></p>
+                  <p class="card-text">Yes Guys Web-Os is now getting regular updates as of May 2024 and in 2023 there will be no major update by the no update till now as of 01/01/2024</p>
+                  <p class="card-text"><small class="text-body-secondary">Last updated 1 January 2024</small></p>
                 </div>
               </div>
               <div class="card">
@@ -132,7 +456,7 @@
                 <div class="card-body">
                   <h5 class="card-title">Improving the AI which came with Web-OS tripuna </h5>
                   <p class="card-text">Yes Sir finally your fan Favourite AI which Does not have a name but have a full on Feature set with it is getting it's first ever update on May 2024 along with the realise of the new Web-Os .</p>
-                  <p class="card-text"><small class="text-body-secondary">Last updated 24 Aug 2023</small></p>
+                  <p class="card-text"><small class="text-body-secondary">Last updated 1 January 2024</small></p>
                 </div>
               </div>
               <div class="card">
@@ -140,7 +464,7 @@
                 <div class="card-body">
                   <h5 class="card-title">Updating the about Page</h5>
                   <p class="card-text">Guys i think that updating the about page with new things is better than just leaving it forevr and looking at it ever again this gives a power and motivation for working in the new projects as the updates season Kick off with the update to the about page </p>
-                  <p class="card-text"><small class="text-body-secondary">Last updated 24 Aug 2023</small></p>
+                  <p class="card-text"><small class="text-body-secondary">Last updated 1 January 2024</small></p>
                 </div>
               </div>
             </div>
@@ -149,27 +473,27 @@
             <h1>New Year Resolution</h1>
             <div class="card-group">
               <div class="card">
-                <img src="https://images.pexels.com/photos/3225517/pexels-photo-3225517.jpeg?auto=compress&cs=tinysrgb&w=600" class="card-img-top" alt="Source : Pexels">
+                <img src="https://images.pexels.com/photos/5428003/pexels-photo-5428003.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="card-img-top" alt="Source : Pexels">
                 <div class="card-body">
-                  <h5 class="card-title">Adapting to new environments </h5>
-                  <p class="card-text">i am always know to be stuborn and the be crazy during fights but i have come to a point that is i have stoppeed being stuborn in unnessery situvations and be do not interfer in others matter.</p>
-                  <p class="card-text"><small class="text-body-secondary">Last updated 24 Aug 2023</small></p>
+                  <h5 class="card-title">Master a New Programming Language</h5>
+                  <p class="card-text">So i am taking this as challenge guys programming as whole is huge like there is 50+ Languages for Coding each of them being used for different types of Tasks like HTML CSS and JS used for Web Development JS being used for App Development Python for Server based App text based App and Even GUI based apps i one i would look forword is Either JS based App Development or Python based App/GUI Development</p>
+                  <p class="card-text"><small class="text-body-secondary">Last updated 1 January 2024</small></p>
                 </div>
               </div>
               <div class="card">
                 <img src="https://images.pexels.com/photos/9429448/pexels-photo-9429448.jpeg?auto=compress&cs=tinysrgb&w=600" class="card-img-top" alt="Source : Pexels">
                 <div class="card-body">
-                  <h5 class="card-title">Learning New things that we boost my personality</h5>
-                  <p class="card-text">ya i am kinda childish and i want to learn some new things i learn never knew before so that counts for my personality boost.</p>
-                  <p class="card-text"><small class="text-body-secondary">Last updated 24 Aug 2023</small></p>
+                  <h5 class="card-title">Learn a Non-Technical Skill</h5>
+                  <p class="card-text">Yep Mr Techie is gonna learn something new which is non-Technical thing like no Coding No Technology based thing cuz my head filled up with these things if i see something i would instandly make a note of it and try to make my version</p>
+                  <p class="card-text"><small class="text-body-secondary">Last updated 1 January 2024</small></p>
                 </div>
               </div>
               <div class="card">
                 <img src="https://images.pexels.com/photos/853168/pexels-photo-853168.jpeg?auto=compress&cs=tinysrgb&w=600" class="card-img-top" alt="Source : Pexel">
                 <div class="card-body">
-                  <h5 class="card-title">Meet New People and Make New friends </h5>
-                  <p class="card-text">For the most part of the school life i was introvert and only recently i am become a extrovert this means that i need more friends and enjoy with them during Celebrations at SChool.</p>
-                  <p class="card-text"><small class="text-body-secondary">Last updated 24 Aug 2023</small></p>
+                  <h5 class="card-title">Become i consistent YouTuber</h5>
+                  <p class="card-text">As some of you guys might know that i have a youtube channel which is kinda dead and i want to restore it by uploading new videos and Entertain people</p>
+                  <p class="card-text"><small class="text-body-secondary">Last updated 1 January 2024</small></p>
                 </div>
               </div>
             </div>
@@ -186,8 +510,8 @@
       </div>
     </div>
   </section>
-  <section id="Projects" style="font-family: 'IBM Plex Mono', monospace; text-decoration: underline;">
-    <div class="col-md-16"> <h1 style="align-items: center;">Projects</h1></div>
+  <section id="Projects" style="font-family: 'IBM Plex Mono', monospace;">
+    <div class="col-md-12 text-center"> <h1 style="color: black; text-decoration: underline;">Projects</h1></div>
     <div class="card-group">
       <div class="card">
         <iframe src="https://vdvignesh.github.io/Web-OS-Tripuna/" frameborder="0"></iframe>
@@ -196,7 +520,7 @@
           <p class="card-text">This is our Second version the Web-OS and the secod member of the Web os Family this has all the feature of old version and New features which old version lacked at the first place.</p>
         </div>
         <div class="card-footer">
-          <small class="text-body-secondary">Last updated 24 Aug 2023</small>
+          <small class="text-body-secondary">Last updated 1 January 2024</small>
         </div>
       </div>
       <div class="card">
@@ -206,7 +530,7 @@
           <p class="card-text">This is our first version and first Menber of the Web-OS Family .</p>
         </div>
         <div class="card-footer">
-          <small class="text-body-secondary">Last updated 24 Aug 2023</small>
+          <small class="text-body-secondary">Last updated 1 January 2024</small>
         </div>
       </div>
       <div class="card">
@@ -216,21 +540,22 @@
           <p class="card-text">This is my About page which you are currently Viewing.</p>
         </div>
         <div class="card-footer">
-          <small class="text-body-secondary">Last updated 24 Aug 2023</small>
+          <small class="text-body-secondary">Last updated 1 January 2024</small>
         </div>
       </div>
     </div>
   </section>
+    </section>
   <section>
         <footer class="bg-dark">
       <div class="container">
           <div class="row">
              <div class="col-md-12 text-center text-drak p-4"style="font-size: 30px; font-family: 'IBM Plex Mono', monospace">
              <a href="https://www.youtube.com/channel/UCXUeXBZi53jyQldS36tKAyg" target="blank" style="color: black;"><i class="fab fa-youtube"></i></a>
-             <a href="mailto:vdileepvignesh@gmail.com" target="blank"><i class="fas fa-envelope-square"style="color: black;"></i></i></a>
+             <a href="mailto:vdileepvignesh2@gmail.com" target="blank"><i class="fas fa-envelope-square"style="color: black;"></i></i></a>
              <a href="https://www.github.com/VDVignesh" target="blank"><i class="fab fa-github"style="color: black;"></i></a>
-            <p style="color:white;"><i class="fas fa-copyright"></i> VDVignesh - All rights reserved</p>
-             </div>
+            <p style="color:white;"><button id="EasterEggBut1" onclick="EasterEgg()" style="background-color: #212529; border: none; color: white;"><i class="fas fa-copyright"></i></button><button id="EasterEggBut2" onclick="EasterEgg()" style="background-color: #212529; border: none; color: white; display: none;"><i class="fa-regular fa-sun"></i></i></button></i> 2020 - Present  VDVignesh - All rights reserved</p>
+             </div> 
           </div>
       </div>
   </footer> 
@@ -279,6 +604,50 @@ document.addEventListener("DOMContentLoaded", function() { // On DOM Load initia
 if(textArray.length) setTimeout(type, newTextDelay + 250);
 });
 
+
+
+function EasterEgg(){
+  document.getElementById("Friends").style.display = "none";
+  document.getElementById("About").style.display = "none";
+  document.getElementById("Projects").style.display = "none";
+  document.getElementById("home").style.display = "none";
+  document.getElementById("NavBar").style.display = "none"
+  document.getElementById("EasterEggBut1").style.display = "none"
+  document.getElementById("EasterEggBut2").style.display = "block"
+  }
+
+  (function () {
+  "use strict";
+
+  // define variables
+  var items = document.querySelectorAll(".timeline li");
+
+  // check if an element is in viewport
+  // http://stackoverflow.com/questions/123999/how-to-tell-if-a-dom-element-is-visible-in-the-current-viewport
+  function isElementInViewport(el) {
+    var rect = el.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <=
+        (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  }
+
+  function callbackFunc() {
+    for (var i = 0; i < items.length; i++) {
+      if (isElementInViewport(items[i])) {
+        items[i].classList.add("in-view");
+      }
+    }
+  }
+
+  // listen for events
+  window.addEventListener("load", callbackFunc);
+  window.addEventListener("resize", callbackFunc);
+  window.addEventListener("scroll", callbackFunc);
+})();
 
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/platform/1.3.6/platform.min.js" integrity="sha512-eYPrm8TgYWg3aa6tvSRZjN4v0Z9Qx69q3RhfSj+Mf89QqwOMqmwSlsVqfp4N8NVAcZe/YeUhh9x/nM2CAOp6cA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
